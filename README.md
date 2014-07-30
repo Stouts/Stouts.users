@@ -1,4 +1,4 @@
-Stouts.generic-users
-====================
+Stouts.users
+============
 
 Manage users and groups
