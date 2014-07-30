@@ -1,14 +1,16 @@
 ---
 
 - name: users | Ensure the groups are present pt. 1
-  group:
-      name={{item.name|default(item)}}
-      system={{item.system|default("no")}}
+  group: name={{item.name|default(item)}} system={{item.system|default("no")}}
   with_items: users_groups
 
 - name: users | Ensure the removed groups are not present
   group: name={{item}} state=absent
   with_items: users_remove_groups
+
+- name: users | Create per user groups
+  group: name={{item.name|default(item)}}
+  with_items: users_users
 
 - name: users | Ensure the users are present
   user:
