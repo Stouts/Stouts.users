@@ -26,8 +26,20 @@ users_users: []                 # Create users
                                 #     - name: name1
                                 #       groups: admin,sudo
                                 #       shell: /bin/zsh
-                                #       ssh_keys:
-                                #         - ssh-rsa KEY-WILL-BE-ADDED-TO-AUTHORIZED-KEYS
+
+users_ssh_keys: []              # Assign allowed keys to users
+                                #   users_ssh_keys:
+                                #   - name: username1
+                                #     authorized:
+                                #     - ssh-rsa KEY-WILL-BE-ADDED-TO-AUTHORIZED-KEYS
+                                #     - ssh-rsa KEY-WILL-BE-ADDED-TO-AUTHORIZED-KEYS
+                                #   - name: username2
+                                #     authorized:
+                                #      - ssh-rsa KEY-WILL-BE-ADDED-TO-AUTHORIZED-KEYS
+
+users_to_install: []            # List of usernames. If not empty only users from the list will be installed.
+                                # So that way you could keep a huge list of users somewhere and install only
+                                # some of them in special environments.
 
 users_shell: /bin/bash          # Default user shell
 
@@ -50,10 +62,14 @@ Example:
 
   vars:
     users_groups: [admin]
-    users_users:
-      - name: klen
-        ssh_keys:
-          - ssh-rsa KEY-HERE
+    users_users: [tom, jerry]
+    users_ssh_keys:
+    - name: tom
+      authorized: 
+      - ssh-rsa KEY-HERE
+    - name: jerry
+      authorized: 
+      - ssh-rsa KEY-HERE
 
 ```
 
