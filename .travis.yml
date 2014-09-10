@@ -23,12 +23,21 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 
+  # Should be existed
   - sudo cat /etc/passwd | grep testuser || exit 1
+
+  # Shouldn't be existed
+  - sudo cat /etc/passwd | grep wronguser && exit 1
+
+  # Should be presented
   - sudo cat /home/testuser/.ssh/authorized_keys | grep TESTKEY || exit 1
 
+# Variables
 users_groups: [testgroup]
-users_users:
+users_users: [testuser, wronguser]
+users_to_install: [testuser]
+users_ssh_keys:
   - name: testuser
-    ssh_keys:
-      - ssh-rsa TESTKEY
+    authorized:
+    - ssh-rsa TESTKEY
 
