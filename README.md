@@ -2,8 +2,7 @@ Stouts.users
 ============
 
 [![Build Status](http://img.shields.io/travis/Stouts/Stouts.users.svg?style=flat-square)](https://travis-ci.org/Stouts/Stouts.users)
-[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.users-blue.svg?style=flat-square)](https://galaxy.users.com/list#/roles/1210)
-[![Tag](http://img.shields.io/github/tag/Stouts/Stouts.users.svg?style=flat-square)]()
+[![Galaxy](http://img.shields.io/badge/galaxy-Stouts.users-blue.svg?style=flat-square)](https://galaxy.ansible.com/list#/roles/1210)
 
 Ansible role which Manage users and groups
 
