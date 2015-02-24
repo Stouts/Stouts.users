@@ -24,9 +24,10 @@
       home: "{{item.home|default('/home/' + item.name|default(item))}}"
       move_home: "{{item.move_home|default('no')}}"
       non_unique: "{{item.non_unique|default('no')}}"
+      password: "{{item.password|default('')}}"
       shell: "{{item.shell|default(users_shell)}}"
       system: "{{item.system|default('no')}}"
-      update_password: "{{item.uid|default('always')}}"
+      update_password: "{{item.update_password|default('always')}}"
   when: not users_to_install or item.name|default(item) in users_to_install
   with_items: users_users
 
