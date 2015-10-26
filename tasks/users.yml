@@ -18,7 +18,6 @@
       name: "{{item.name|default(item)}}"
       comment: "{{item.comment|default('')}}"
       createhome: "{{item.createhome|default('yes')}}"
-      force: "{{item.force|default('no')}}"
       group: "{{item.group|default(item.name|default(item))}}"
       groups: "{{item.groups|default('')}}"
       home: "{{item.home|default('/home/' + item.name|default(item))}}"
