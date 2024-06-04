@@ -35,6 +35,14 @@
   when: not users_to_install or item.name|default(item) in users_to_install
   with_items: "{{users_users}}"
 
+- name: Ensure the installed users have groups
+  user:
+      name: "{{item.name|default(item)}}"
+      groups: "{{item.groups|default('')}}"
+      append: yes
+  when: item.groups
+  with_items: "{{users_users}}"
+
 - name: Ensure the removed users are not present
   user:
     name: "{{item}}"
