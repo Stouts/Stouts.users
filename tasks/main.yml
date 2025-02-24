@@ -1,5 +1,5 @@
 ---
 
-- import_tasks: users.yml
+- include_tasks: users.yml
   when: users_enabled
   tags: [users]
