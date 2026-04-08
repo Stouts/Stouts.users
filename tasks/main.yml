@@ -1,5 +1,9 @@
 ---
 
-- include_tasks: users.yml
+- name: Setup users
+  ansible.builtin.include_tasks:
+    file: users.yml
+    apply:
+      tags: users
   when: users_enabled
   tags: [users]
