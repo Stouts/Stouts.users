@@ -8,7 +8,7 @@ Ansible role which Manage users and groups
 
 #### Variables
 ```yaml
-users_enabled: yes              # The role is enabled
+users_enabled: true              # The role is enabled
 
 users_groups: []                # Create groups
                                 # Simple syntax:
@@ -16,7 +16,7 @@ users_groups: []                # Create groups
                                 # Complex syntax:
                                 #   users_groups:
                                 #     - name: name1
-                                #       system: yes
+                                #       system: true
                                 #     - name: name2
 
 users_users: []                 # Create users
@@ -66,11 +66,11 @@ Example:
     users_users: [tom, jerry]
     users_ssh_keys:
     - name: tom
-      authorized: 
-      - ssh-rsa KEY-HERE
+      authorized:
+      - ssh-ed25519 KEY-HERE
     - name: jerry
-      authorized: 
-      - ssh-rsa KEY-HERE
+      authorized:
+      - ssh-ed25519 KEY-HERE
 
 ```
 

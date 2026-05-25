@@ -1,6 +1,6 @@
 ---
 
-users_enabled: yes              # The role is enabled
+users_enabled: true              # The role is enabled
 
 users_groups: []                # Create groups
                                 # Simple syntax:
@@ -8,7 +8,7 @@ users_groups: []                # Create groups
                                 # Complex syntax:
                                 #   users_groups:
                                 #     - name: name1
-                                #       system: yes
+                                #       system: true
                                 #     - name: name2
 
 users_users: []                 # Create users
